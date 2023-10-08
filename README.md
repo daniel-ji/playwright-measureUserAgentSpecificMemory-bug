@@ -18,3 +18,5 @@ Getting memory...
 Error:  DOMException: Failed to execute 'measureUserAgentSpecificMemory' on 'Performance': performance.measureUserAgentSpecificMemory is not available.
     at http://localhost:8080/:29:16
 ```
+
+Note how the `measureUserAgentSpecificMemory` method is supported, but still throws an error when called.
