@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Page Title</title>
+</head>
+
+<body>
+	<h2 id="memory" data-testid="memory"></h2>
+	<script src="coi-serviceworker.js"></script>
+	<script>
+		setTimeout(() => {
+			if (window.crossOriginIsolated) {
+				console.log('Cross-Origin-Isolated');
+			} else {
+				console.log('Not Cross-Origin-Isolated');
+			}
+
+			if (performance.measureUserAgentSpecificMemory) {
+				console.log('measureUserAgentSpecificMemory supported');
+			} else {
+				console.log('measureUserAgentSpecificMemory not supported');
+			}
+		}, 1000)
+
+		setTimeout(async () => {
+			console.log('Getting memory...')
+			performance.measureUserAgentSpecificMemory().then(
+				(result) => {
+					console.log('Memory: ', result.bytes);
+					document.getElementById("memory").innerHTML = result.bytes;
+				}
+			).catch(
+				(error) => {
+					console.log('Error: ', error);
+				}
+			)
+		}, 2000)
+	</script>
+</body>
+
+</html>
