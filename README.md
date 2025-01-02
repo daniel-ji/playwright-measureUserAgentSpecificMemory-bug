@@ -1,4 +1,5 @@
-# Issue has actually been fixed, see https://github.com/daniel-ji/playwright-measureUserAgentSpecificMemory-bug/commit/d864eef0ec98a3ae8e21f6e107103b2daf13661e and relevant discussion https://github.com/microsoft/playwright/issues/27499
+# Issue has actually been fixed!
+See https://github.com/daniel-ji/playwright-measureUserAgentSpecificMemory-bug/commit/d864eef0ec98a3ae8e21f6e107103b2daf13661e and relevant discussion https://github.com/microsoft/playwright/issues/27499
 
 Playwright performance.measureUserAgentSpecificMemory bug. To reproduce, run:
 
